@@ -245,11 +245,10 @@ typedef struct _TCP_HEADER(UINT32 SegmentLength,
     sizeof(this) <= DataOffset * 4 && //DataOffset points after the static fields
     DataOffset * 4 <= SegmentLength
   };
-  UINT16BE        Reserved:3
+  UINT16BE        Reserved:4
   {
     Reserved == 0 //Reserved bytes are unused
   };
-  UINT16BE        NS:1;
   UINT16BE        CWR:1;
   UINT16BE        ECE:1;
   UINT16BE        URG:1;
